@@ -36,6 +36,7 @@
 <script type="text/javascript" src="Job/jobctrl.js"></script>
 <script type="text/javascript" src="Chat/chatController.js"></script>
 <script type="text/javascript" src="Chat/chatService.js"></script>
+<script type="text/javascript" src="Event/eventctrl.js"></script>
 
 
 
@@ -80,6 +81,13 @@ document.body.style.backgroundImage = "url('resources/imgs/background.jpg')";
         </ul>
       </li>
       
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Forums <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#forum" data-ng-hide="forum.userid==globals.currentUser.username">CreateForum</a></li>
+            <li><a href="#viewforum">ViewForum</a></li>
+        </ul>
+      </li>
+      
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Jobs <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li data-ng-show="currentUser.role=='Admin'"><a href="#jobs">CreateJob</a></li>
@@ -88,19 +96,24 @@ document.body.style.backgroundImage = "url('resources/imgs/background.jpg')";
         </ul>
       </li>
       
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Forums <span class="caret"></span></a>
+      
+      
+      
+      
+      <!--////////////////////////////Event//////////////////////////////////////  -->
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Events <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#forum" data-ng-hide="forum.userid==globals.currentUser.username">CreateForum</a></li>
-            <li><a href="#viewforum">ViewForum</a></li>
+          <li><a href="#event" data-ng-show="currentUser.role=='Admin'">CreateEvent</a></li>
+            <li><a href="#viewevent">ViewEvent</a></li>
         </ul>
       </li>
-      
-    </ul>
+      </ul>
     
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#register" data-ng-hide="globals.currentUser.islogged"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="#login" data-ng-hide="globals.currentUser.islogged"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-   
+ 
    <li style="padding-top:20px;"  data-ng-show="globals.currentUser.islogged">
           <p	style="color: white";>Welcome:{{globals.currentUser.username}}</p>
         </li>
